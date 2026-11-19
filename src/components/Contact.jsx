@@ -7,7 +7,7 @@ const contacts = [
   { icon: <FaGithub />, label: 'GitHub', value: 'wahdini-15', href: 'https://github.com/wahdini-15' },
   { icon: <FaInstagram />, label: 'Instagram', value: 'Wahdini Annafila', href: 'https://www.instagram.com/_wahdini.annafila?dlrf=azd1Y2M5NHVvdDkx' },
   { icon: <FaLinkedinIn />, label: 'LinkedIn', value: 'Wahdini Annafila', href: 'https://www.linkedin.com/in/wahdini-annafila-061259345/' },
-  { icon: <FaWhatsapp />, label: 'WhatsApp', value: '+62 896-5300-2297', href: 'https://wa.me/628xxxxxxxxxx' },
+  { icon: <FaWhatsapp />, label: 'WhatsApp', value: '+62 896-5300-2297', href: 'https://wa.me/6289653002297' },
 ];
 
 export default function Contact() {
