@@ -1,0 +1,276 @@
+.hero {
+ position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--pink-light), var(--pink-mid), var(--pink-main));
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0;
+}
+
+.hero .wave {
+  position: relative;
+  z-index: 2;
+  height: 110px; 
+  margin-top: -1.5rem
+}
+
+/* ---------- Gelembung blur melayang ---------- */
+.blob {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.55;
+  animation: float 9s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 320px;
+  height: 320px;
+  top: -80px;
+  left: -80px;
+  background: #fff;
+}
+
+.blob-2 {
+  width: 260px;
+  height: 260px;
+  top: 30%;
+  right: -60px;
+  background: var(--pink-dark);
+  animation-delay: -3s;
+}
+
+.blob-3 {
+  width: 220px;
+  height: 220px;
+  bottom: 10%;
+  left: 30%;
+  background: #ffd6e0;
+  animation-delay: -6s;
+}
+
+/* ---------- Badge ---------- */
+.hero__badge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ---------- Foto + cincin berputar ---------- */
+.hero__photo-wrap {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(74, 31, 51, 0.25);
+}
+
+.hero__photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--pink-dark),
+    #fff,
+    var(--pink-light),
+    var(--pink-main),
+    #fff,
+    var(--pink-dark)
+  );
+  animation: spin 6s linear infinite;
+}
+
+.hero__photo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 180px;
+  height: 180px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ---------- Teks ---------- */
+.hero__name {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 700;
+}
+
+.hero__role {
+  min-height: 2rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pink-dark);
+}
+
+.cursor {
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+.hero__sub {
+  max-width: 640px;
+  margin: 0 auto 1.75rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* ---------- Tombol ---------- */
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.btn-pink,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-pink {
+  background: var(--pink-dark);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(196, 78, 117, 0.4);
+}
+
+.btn-pink:hover {
+  background: var(--plum);
+  transform: translateY(-3px) scale(1.04);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid #fff;
+}
+
+.btn-ghost:hover {
+  background: #fff;
+  color: var(--pink-dark);
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* ---------- Animasi ---------- */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -30px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .blob,
+  .hero__photo-wrap::before,
+  .cursor {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__photo {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.floating-icons {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fi {
+  position: absolute;
+  font-size: 2.8rem;
+  color: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0 6px 10px rgba(74, 31, 51, 0.35));
+  animation: bob 5s ease-in-out infinite;
+}
+
+.fi-1 { top: 22%; left: 10%; }
+.fi-2 { top: 50%; left: 6%; animation-delay: -1s; }
+.fi-3 { top: 25%; right: 10%; animation-delay: -2s; }
+.fi-4 { top: 58%; right: 9%; animation-delay: -3s; }
+.fi-5 { top: 75%; left: 10%; animation-delay: -4s; }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+@media (max-width: 768px) {
+  .fi { font-size: 1.6rem; opacity: 0.6; }
+}
+
+.petals {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.petal {
+  position: absolute;
+  top: -30px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.4rem;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal { animation: none; opacity: 0; }
+}

@@ -1,0 +1,36 @@
+.marquee {
+  overflow: hidden;
+  padding: 2rem 0 0;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1.5rem;
+  padding: 0.5rem 1.4rem;
+  border: 1px solid var(--pink-light);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--pink-dark);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
+}

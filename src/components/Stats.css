@@ -1,0 +1,27 @@
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-bottom: 4rem;
+}
+
+.stats__item {
+  min-width: 180px;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(196, 78, 117, 0.3);
+}
+
+.stats__item strong {
+  display: block;
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+.stats__item span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}

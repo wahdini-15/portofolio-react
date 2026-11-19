@@ -1,0 +1,7 @@
+.footer {
+  padding: 1rem 1rem 3rem;
+  background: var(--pink-main);
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
