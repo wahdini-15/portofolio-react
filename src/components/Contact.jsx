@@ -3,11 +3,11 @@ import Reveal from './Reveal';
 import './Contact.css';
 
 const contacts = [
-  { icon: <FaEnvelope />, label: 'Email', value: 'wahdiniannafila150@gmail.com', href: 'https://mail.google.com/mail/u/3/#inbox' },
-  { icon: <FaGithub />, label: 'GitHub', value: 'wahdini-15', href: 'https://github.com/wahdini-15' },
-  { icon: <FaInstagram />, label: 'Instagram', value: 'Wahdini Annafila', href: 'https://www.instagram.com/_wahdini.annafila?dlrf=azd1Y2M5NHVvdDkx' },
-  { icon: <FaLinkedinIn />, label: 'LinkedIn', value: 'Wahdini Annafila', href: 'https://www.linkedin.com/in/wahdini-annafila-061259345/' },
-  { icon: <FaWhatsapp />, label: 'WhatsApp', value: '+62 896-5300-2297', href: 'https://wa.me/6289653002297' },
+  { icon: <FaEnvelope />, label: 'Email', href: 'https://mail.google.com/mail/u/3/#inbox' },
+  { icon: <FaLinkedinIn />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/wahdini-annafila-061259345/' },
+  { icon: <FaGithub />, label: 'GitHub', href: 'https://github.com/wahdini-15' },
+  { icon: <FaInstagram />, label: 'Instagram', href: 'https://www.instagram.com/_wahdini.annafila?dlrf=azd1Y2M5NHVvdDkx' },
+  { icon: <FaWhatsapp />, label: 'WhatsApp', href: 'https://wa.me/6289653002297' },
 ];
 
 export default function Contact() {
@@ -20,14 +20,10 @@ export default function Contact() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="contact__grid">
+          <div className="contact__icons">
             {contacts.map((c) => (
-              <a key={c.label} className="contact-card" href={c.href} target="_blank" rel="noopener noreferrer">
-                <span className="contact-card__icon">{c.icon}</span>
-                <span className="contact-card__text">
-                  <small>{c.label}</small>
-                  <strong>{c.value}</strong>
-                </span>
+              <a key={c.label} className="contact-icon" href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.label} title={c.label}>
+                {c.icon}
               </a>
             ))}
           </div>
